@@ -20,8 +20,8 @@
         "cells": [
           {
             "position": {
-              "x": 12,
-              "y": 53
+              "x": 22,
+              "y": -6.999999999999922
             },
             "size": {
               "width": 160,
@@ -149,8 +149,8 @@
                 "text": "Login System -\nWebapp +\nMobile App"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -260,11 +260,33 @@
                   "new": false,
                   "number": 101,
                   "score": "28"
+                },
+                {
+                  "id": "53c4cef5-2a2d-430e-8264-002258088f28",
+                  "title": "Physischer Gerätezugriff",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "CAPEC-507: Physical Theft\nT1533 — Data from Local System\nAngreifer betrug schützenswerte Informationen von Nutzer aus SD-Karten durch eine bösartigen App",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 108,
+                  "score": ""
                 }
               ],
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isWebApplication": null,
-              "handlesCardPayment": null
+              "handlesCardPayment": null,
+              "handlesGoodsOrServices": null,
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 5,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -281,8 +303,8 @@
                 "text": "2-Faktor-Authe\nntifizierungsdi\nenst"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -379,12 +401,62 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "threats": [],
-              "hasOpenThreats": false,
+              "threats": [
+                {
+                  "id": "f1c8ec1f-28f2-4f72-96c7-d8babf417c7e",
+                  "title": "ungeschützte Rechte auf Datenbankzugriff",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Tampering",
+                  "description": "CAPEC-66 – SQL Injection\nT1631 — Process Injection\nDer 2-Faktor-Authentifizierungsdienst ist nicht redundant und schwach geschützt, Angreifer können die Daten in DB ändern oder löschen\n",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 106,
+                  "score": ""
+                },
+                {
+                  "id": "f3246f84-02a4-45ed-bc8e-3dc2c071519d",
+                  "title": "Überlastung des Telco-Systems",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Denial of service",
+                  "description": "CAPEC-8: Buffer Overflow in an API Call\nT1642: Endpoint Denial of Service\nDieser Service ist kostenpflichtig. Angreifer kann massenhaft Auth-Challenges auslösen, wodurch Routing-Kosten entstehen und legitime OTT-Nachrichten verlangsamt oder blockiert werden.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 109,
+                  "score": ""
+                },
+                {
+                  "id": "8b6b70b7-ebd6-4ca7-aad2-52e0391c7ecd",
+                  "title": "Session Hijacking durch Abfangen",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Elevation of privilege",
+                  "description": "CAPEC-593 – Session Hijacking\nT1635 — Steal Application Access Token\nDer Angreifer (nicht mehr ein Kunden ist oder hat schon Session-Token gestohlen) kann das Services dauerhaft (1 Jahr) zugreifen.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 110,
+                  "score": ""
+                }
+              ],
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "protocol": "",
               "isEncrypted": false,
-              "isPublicNetwork": false
+              "isPublicNetwork": false,
+              "handlesCardPayment": null,
+              "handlesGoodsOrServices": null,
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 2,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 3,
+                "elevationOfPrivilege": 4
+              }
             }
           },
           {
@@ -401,8 +473,8 @@
                 "text": "Telefonnummer-\nAPI-Gateway"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -499,8 +571,33 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "threats": [],
-              "hasOpenThreats": false
+              "threats": [
+                {
+                  "id": "d0e7562e-a51b-4f66-852e-b0ebe16079e5",
+                  "title": "Zugriff auf unverschlüsselte Konfigurationsdatei",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Spoofing",
+                  "description": "CAPEC-639: Probe System Files\nT1634:Credentials from Password Store\nEin Angreifer erlangt Zugriff auf Telefonnummern-API-Gateway in 2-Faktor-Authentifizierungsdienst durch Lesen von unverschlüsselten Konfigurationsdateien auf den Servern, dann kann er Innerhalb des Routing-Services die Daten im Klartext lesen.",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 104,
+                  "score": ""
+                }
+              ],
+              "hasOpenThreats": true,
+              "handlesCardPayment": null,
+              "handlesGoodsOrServices": null,
+              "isWebApplication": null,
+              "threatFrequency": {
+                "spoofing": 5,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -761,8 +858,8 @@
           },
           {
             "position": {
-              "x": 550,
-              "y": 190
+              "x": 338,
+              "y": 210
             },
             "size": {
               "width": 160,
@@ -1257,7 +1354,11 @@
               },
               {
                 "x": 710,
-                "y": 380
+                "y": 460
+              },
+              {
+                "x": 790,
+                "y": 280
               },
               {
                 "x": 740,
@@ -1686,166 +1787,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              ""
-            ],
-            "id": "22f24a87-b8bb-494f-a937-13984ce17ca1",
-            "source": {
-              "cell": "fd7303e8-29d2-4d76-bf7d-87eb619ede69",
-              "port": "dfb64408-e3c5-4293-b6c3-aead6ced1ae0"
-            },
-            "target": {
-              "cell": "18014c60-7665-472f-9474-10a666ec5f01",
-              "port": "e9fc968a-0472-4da5-a6b5-7ce6e3f83cd8"
-            },
-            "vertices": [
-              {
-                "x": 840,
-                "y": 300
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Report schicken",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "Report schicken"
-            ],
-            "id": "ca715622-5dc8-44c5-b4b2-f0353f59640c",
-            "source": {
-              "cell": "18014c60-7665-472f-9474-10a666ec5f01",
-              "port": "43caac9c-585d-4846-8416-a69de6ec0191"
-            },
-            "target": {
-              "cell": "b4739237-f19e-4fec-ad0f-63b22b4b545e",
-              "port": "d234948e-10ad-4deb-8fe1-c81e27d8a1f6"
-            },
-            "vertices": [
-              {
-                "x": 630,
-                "y": 390
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Report schicken",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "Report schicken"
-            ],
-            "id": "1010f14b-2d1d-466c-ae49-2fd32b49abbc",
-            "source": {
-              "cell": "b4739237-f19e-4fec-ad0f-63b22b4b545e"
-            },
-            "target": {
-              "cell": "b8d7e35e-0fa9-4700-8f92-d2adb09abecb",
-              "port": "fb724a6b-a5f9-40d6-b364-a9726346b9e4"
-            },
-            "vertices": [
-              {
-                "x": 340,
-                "y": 325
-              },
-              {
-                "x": 300,
-                "y": 280
-              },
-              {
-                "x": 300,
-                "y": 250
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "5.OTT",
               "description": "",
               "outOfScope": false,
@@ -1919,6 +1860,163 @@
             "vertices": []
           },
           {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Report schicken",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Report schicken"
+            ],
+            "id": "ca715622-5dc8-44c5-b4b2-f0353f59640c",
+            "source": {
+              "cell": "18014c60-7665-472f-9474-10a666ec5f01",
+              "port": "e9fc968a-0472-4da5-a6b5-7ce6e3f83cd8"
+            },
+            "target": {
+              "cell": "b4739237-f19e-4fec-ad0f-63b22b4b545e",
+              "port": "d234948e-10ad-4deb-8fe1-c81e27d8a1f6"
+            },
+            "vertices": [
+              {
+                "x": 560,
+                "y": 310
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              ""
+            ],
+            "id": "22f24a87-b8bb-494f-a937-13984ce17ca1",
+            "source": {
+              "x": 960,
+              "y": 350
+            },
+            "target": {
+              "cell": "18014c60-7665-472f-9474-10a666ec5f01",
+              "port": "43caac9c-585d-4846-8416-a69de6ec0191"
+            },
+            "vertices": [
+              {
+                "x": 750,
+                "y": 410
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Report schicken",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Report schicken"
+            ],
+            "id": "1010f14b-2d1d-466c-ae49-2fd32b49abbc",
+            "source": {
+              "cell": "b4739237-f19e-4fec-ad0f-63b22b4b545e",
+              "port": "1bb1fee1-bdb0-4e2a-8df3-71cee912de45"
+            },
+            "target": {
+              "cell": "b8d7e35e-0fa9-4700-8f92-d2adb09abecb",
+              "port": "1f2f8431-d574-4661-95dc-aab1a066e3d6"
+            },
+            "vertices": [
+              {
+                "x": 700,
+                "y": 260
+              },
+              {
+                "x": 700,
+                "y": 290
+              }
+            ]
+          },
+          {
             "position": {
               "x": 410,
               "y": -174
@@ -1932,11 +2030,13 @@
                 "text": "Log-DB"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -2036,9 +2136,29 @@
               "storesCredentials": false,
               "isEncrypted": true,
               "isSigned": true,
-              "hasOpenThreats": false,
-              "threats": [],
-              "storesInventory": null
+              "hasOpenThreats": true,
+              "threats": [
+                {
+                  "id": "94568cf0-49de-42f2-89d7-e8d7f5efeb35",
+                  "title": "SQL injection",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Information disclosure",
+                  "description": "SQL injection: Datenbank ist anfällig für SQL injections und das Auslesen (only READ) von Daten ist möglich, die ich als Kunde nicht lesen dürfte. Man muss eingeloggt sein, um den Angriff durchzuführen.\nCAPEC-66: SQL Injection: This attack exploits target software that constructs SQL statements based on user input. An attacker crafts input strings so that when the target software constructs SQL statements based on the input, the resulting SQL statement performs actions other than those the application intended. SQL Injection results from failure of the application to appropriately validate input.\nT1631: Process Injection",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 105,
+                  "score": ""
+                }
+              ],
+              "storesInventory": null,
+              "threatFrequency": {
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 2,
+                "denialOfService": 0
+              }
             }
           },
           {
@@ -2290,8 +2410,8 @@
           },
           {
             "position": {
-              "x": 420,
-              "y": 280
+              "x": 560,
+              "y": 160
             },
             "size": {
               "width": 140,
@@ -2302,13 +2422,14 @@
                 "text": "SIEM-System"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 14,
             "ports": {
               "groups": {
                 "top": {
@@ -2392,7 +2513,6 @@
               ]
             },
             "id": "b4739237-f19e-4fec-ad0f-63b22b4b545e",
-            "zIndex": 14,
             "data": {
               "type": "tm.Process",
               "name": "SIEM-System",
@@ -2400,18 +2520,43 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
-            }
+              "threats": [
+                {
+                  "id": "db2cd34f-9c19-47a2-9cfa-cab55b3b56db",
+                  "title": "Versand über unsichere, nachträglich fälschbare E-Mails",
+                  "status": "Open",
+                  "severity": "TBD",
+                  "type": "Repudiation",
+                  "description": "CAPEC-111: Message Injection\nT1114: Email Collection\nMitarbeiten können die Report-Dateien zu falsche E-Mail schicken, der Angreifer kann einfach die Daten (Excel-Tabelle) lesen und modifizieren\n",
+                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 107,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 0,
+                "tampering": 0,
+                "repudiation": 4,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
+            },
+            "children": [
+              "992165f3-451c-4b0f-acdf-54c16b0bd09c"
+            ]
           },
           {
             "position": {
-              "x": 250,
-              "y": 170
+              "x": 650,
+              "y": 320
             },
             "size": {
               "width": 120,
@@ -2432,6 +2577,7 @@
             },
             "visible": true,
             "shape": "store",
+            "zIndex": 15,
             "ports": {
               "groups": {
                 "top": {
@@ -2515,7 +2661,6 @@
               ]
             },
             "id": "b8d7e35e-0fa9-4700-8f92-d2adb09abecb",
-            "zIndex": 15,
             "data": {
               "type": "tm.Store",
               "name": "Report-DB",
@@ -2529,7 +2674,13 @@
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [],
+              "threatFrequency": {
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             }
           }
         ],
@@ -2542,7 +2693,7 @@
     ],
     "reviewer": "Georg Neugebauer",
     "diagramTop": 10,
-    "threatTop": 102
+    "threatTop": 110
   },
   "version": "2.5.0"
 }
