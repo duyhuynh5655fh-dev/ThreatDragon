@@ -263,7 +263,8 @@
                 }
               ],
               "hasOpenThreats": false,
-              "isWebApplication": null
+              "isWebApplication": null,
+              "handlesCardPayment": null
             }
           },
           {
@@ -1714,17 +1715,116 @@
                 "x": 840,
                 "y": 300
               }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Report schicken",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Report schicken"
             ],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
+            "id": "ca715622-5dc8-44c5-b4b2-f0353f59640c",
+            "source": {
+              "cell": "18014c60-7665-472f-9474-10a666ec5f01",
+              "port": "43caac9c-585d-4846-8416-a69de6ec0191"
+            },
+            "target": {
+              "cell": "b4739237-f19e-4fec-ad0f-63b22b4b545e",
+              "port": "d234948e-10ad-4deb-8fe1-c81e27d8a1f6"
+            },
+            "vertices": [
+              {
+                "x": 630,
+                "y": 390
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Report schicken",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Report schicken"
+            ],
+            "id": "1010f14b-2d1d-466c-ae49-2fd32b49abbc",
+            "source": {
+              "cell": "b4739237-f19e-4fec-ad0f-63b22b4b545e"
+            },
+            "target": {
+              "cell": "b8d7e35e-0fa9-4700-8f92-d2adb09abecb",
+              "port": "fb724a6b-a5f9-40d6-b364-a9726346b9e4"
+            },
+            "vertices": [
+              {
+                "x": 340,
+                "y": 325
+              },
+              {
+                "x": 300,
+                "y": 280
+              },
+              {
+                "x": 300,
+                "y": 250
+              }
+            ]
           },
           {
             "shape": "flow",
@@ -1807,65 +1907,6 @@
             "labels": [
               "Report schicken"
             ],
-            "id": "1010f14b-2d1d-466c-ae49-2fd32b49abbc",
-            "source": {
-              "cell": "b4739237-f19e-4fec-ad0f-63b22b4b545e",
-              "port": "112b9b71-a948-4250-a247-525a4637db59"
-            },
-            "target": {
-              "cell": "b8d7e35e-0fa9-4700-8f92-d2adb09abecb",
-              "port": "fb724a6b-a5f9-40d6-b364-a9726346b9e4"
-            },
-            "vertices": [
-              {
-                "x": 340,
-                "y": 325
-              },
-              {
-                "x": 300,
-                "y": 280
-              },
-              {
-                "x": 300,
-                "y": 250
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Report schicken",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "Report schicken"
-            ],
             "id": "ef896a70-c6e9-4f28-b7d3-3fe6f30df473",
             "source": {
               "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c",
@@ -1876,57 +1917,6 @@
               "port": "4364ae15-9da2-461a-b1f0-f788add806c9"
             },
             "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Report schicken",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "Report schicken"
-            ],
-            "id": "ca715622-5dc8-44c5-b4b2-f0353f59640c",
-            "source": {
-              "cell": "18014c60-7665-472f-9474-10a666ec5f01",
-              "port": "43caac9c-585d-4846-8416-a69de6ec0191"
-            },
-            "target": {
-              "cell": "b4739237-f19e-4fec-ad0f-63b22b4b545e",
-              "port": "d234948e-10ad-4deb-8fe1-c81e27d8a1f6"
-            },
-            "vertices": [
-              {
-                "x": 630,
-                "y": 390
-              }
-            ]
           },
           {
             "position": {
