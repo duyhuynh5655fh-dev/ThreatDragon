@@ -263,16 +263,16 @@
                 },
                 {
                   "id": "53c4cef5-2a2d-430e-8264-002258088f28",
-                  "title": "Physischer Gerätezugriff",
+                  "title": "SD-Karten sind unsicher",
                   "status": "Open",
                   "severity": "TBD",
                   "type": "Information disclosure",
-                  "description": "CAPEC-507: Physical Theft\nT1533 — Data from Local System\nAngreifer betrug schützenswerte Informationen von Nutzer aus SD-Karten durch eine bösartigen App",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "Wenn ein Angreifer physischen Zugriff auf ein Gerät erhält (Smartphone, Tablet , ...), kann er auf Daten zugreifen, die nicht ausreichend geschützt sind. Besonders SD-Karten sind schwache Verschlüsselung\nAngriffsvektor: Physischer Gerätezugriff\nCAPEC-507: Physical Theft\nT1533 — Data from Local System\nD: 10 / R: 10 / E: 4 / A: 10/ DREA: 34",
+                  "mitigation": "Einsatz einer dynamischen Kryptomechanik (Crypto-Framework von Allsecure), die sicherstellt, dass Daten nur von autorisierten Apps (Allsecure-Apps) gelesen werden können. Durch dynamische Schlüssel und App-Bindung wird verhindert, dass Angreifer Daten im Klartext auslesen, selbst bei physischem Zugriff.\nD: 10 / R: 1 / E: 1 / A: 10 / DREA: 22",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 108,
-                  "score": ""
+                  "score": "22"
                 }
               ],
               "hasOpenThreats": true,
@@ -283,7 +283,7 @@
                 "spoofing": 0,
                 "tampering": 0,
                 "repudiation": 0,
-                "informationDisclosure": 5,
+                "informationDisclosure": 11,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
               }
@@ -408,7 +408,7 @@
                   "status": "Open",
                   "severity": "TBD",
                   "type": "Tampering",
-                  "description": "CAPEC-66 – SQL Injection\nT1631 — Process Injection\nDer 2-Faktor-Authentifizierungsdienst ist nicht redundant und schwach geschützt, Angreifer können die Daten in DB ändern oder löschen\n",
+                  "description": "Jeder (inkl. Angreifer) hat Zugriff auf die DB und kann Auth-Daten manipulieren oder löschen. Das kompromittiert die Authentifizierung langfristig.\nAngriffsvektor: Privilege Abuse\nCAPEC-122: Privilege Abuse\nID: T1078: Valid Accounts\nD: 10 / R: 9 / E: 10 / A: 10 / DREA: 39\n",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
@@ -419,27 +419,27 @@
                   "id": "f3246f84-02a4-45ed-bc8e-3dc2c071519d",
                   "title": "Überlastung des Telco-Systems",
                   "status": "Open",
-                  "severity": "TBD",
+                  "severity": "High",
                   "type": "Denial of service",
-                  "description": "CAPEC-8: Buffer Overflow in an API Call\nT1642: Endpoint Denial of Service\nDieser Service ist kostenpflichtig. Angreifer kann massenhaft Auth-Challenges auslösen, wodurch Routing-Kosten entstehen und legitime OTT-Nachrichten verlangsamt oder blockiert werden.",
+                  "description": "Der Telco- Service ist kostenpflichtig. Angreifer kann massenhaft Auth-Challenges auslösen, wodurch Routing-Kosten entstehen und legitime OTT-Nachrichten verlangsamt oder blockiert werden.\nAngriffsvektor: Abuse von API-Endpunkten\nCAPEC-125: Flooding\nT1642: Endpoint Denial of Service\nD: 10 / R: 9 / E: 8 / A: 3 / DREA: 30",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 109,
-                  "score": ""
+                  "score": "30"
                 },
                 {
                   "id": "8b6b70b7-ebd6-4ca7-aad2-52e0391c7ecd",
-                  "title": "Session Hijacking durch Abfangen",
+                  "title": "unnötig Rechte auf die Log-DB",
                   "status": "Open",
-                  "severity": "TBD",
+                  "severity": "Critical",
                   "type": "Elevation of privilege",
-                  "description": "CAPEC-593 – Session Hijacking\nT1635 — Steal Application Access Token\nDer Angreifer (nicht mehr ein Kunden ist oder hat schon Session-Token gestohlen) kann das Services dauerhaft (1 Jahr) zugreifen.",
+                  "description": "Alle Benutzer besitzen  Rechte auf die Log-DB. Dadurch können sie sensible Daten einsehen, verändern oder löschen.\nAngriffsvektor: Unzureichende Zugriffskontrolle\nCAPEC-114: Authentication Abuse\nT1078.003: Valid Accounts: Local Accounts\nD: 10 / R: 9 / E: 10 / A: 7 / DREA: 36",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 110,
-                  "score": ""
+                  "score": "36"
                 }
               ],
               "hasOpenThreats": true,
@@ -451,12 +451,13 @@
               "handlesGoodsOrServices": null,
               "threatFrequency": {
                 "spoofing": 0,
-                "tampering": 2,
+                "tampering": 9,
                 "repudiation": 0,
                 "informationDisclosure": 0,
-                "denialOfService": 3,
-                "elevationOfPrivilege": 4
-              }
+                "denialOfService": 6,
+                "elevationOfPrivilege": 7
+              },
+              "isWebApplication": null
             }
           },
           {
@@ -578,12 +579,12 @@
                   "status": "Open",
                   "severity": "TBD",
                   "type": "Spoofing",
-                  "description": "CAPEC-639: Probe System Files\nT1634:Credentials from Password Store\nEin Angreifer erlangt Zugriff auf Telefonnummern-API-Gateway in 2-Faktor-Authentifizierungsdienst durch Lesen von unverschlüsselten Konfigurationsdateien auf den Servern, dann kann er Innerhalb des Routing-Services die Daten im Klartext lesen.",
+                  "description": "Ein Angreifer erlangt Zugriff auf Telefonnummern-API-Gateway in 2-Faktor-Authentifizierungsdienst durch Lesen von unverschlüsselten Konfigurationsdateien auf den Servern, dann kann er Innerhalb des Routing-Services die Daten im Klartext lesen.\nCAPEC-639: Probe System Files\nID: T1552.001: Unsecured Credentials: Credentials In Files\nD: 10 / R: 9 / E: 4 / A: 6 / DREA: 29",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 104,
-                  "score": ""
+                  "score": "29"
                 }
               ],
               "hasOpenThreats": true,
@@ -591,7 +592,7 @@
               "handlesGoodsOrServices": null,
               "isWebApplication": null,
               "threatFrequency": {
-                "spoofing": 5,
+                "spoofing": 8,
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
@@ -858,8 +859,8 @@
           },
           {
             "position": {
-              "x": 338,
-              "y": 210
+              "x": 630,
+              "y": 180
             },
             "size": {
               "width": 160,
@@ -1158,62 +1159,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "2a. Telefonnummer",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              {
-                "attrs": {
-                  "label": {
-                    "text": "Telefonnummer, OTT"
-                  }
-                },
-                "position": 0.5
-              }
-            ],
-            "id": "3f9c3edd-4fe5-4fc4-9239-2ca13291fc25",
-            "source": {
-              "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c"
-            },
-            "target": {
-              "cell": "fd7303e8-29d2-4d76-bf7d-87eb619ede69"
-            },
-            "vertices": [
-              {
-                "x": 920,
-                "y": 240
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "2b. Telefonanbieter",
               "description": "",
               "outOfScope": false,
@@ -1357,12 +1302,16 @@
                 "y": 460
               },
               {
-                "x": 790,
+                "x": 820,
                 "y": 280
               },
               {
-                "x": 740,
+                "x": 790,
                 "y": 200
+              },
+              {
+                "x": 760,
+                "y": 140
               },
               {
                 "x": 638,
@@ -1392,7 +1341,87 @@
                 "x": 243,
                 "y": -8
               }
-            ]
+            ],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead",
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
           },
           {
             "shape": "trust-broundary-curve",
@@ -1787,52 +1816,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "5.OTT",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "5.OTT"
-            ],
-            "id": "b30b21a2-8462-4fc8-8bc2-c0eefc20d513",
-            "source": {
-              "cell": "18014c60-7665-472f-9474-10a666ec5f01",
-              "port": "f05582ef-396f-4227-898b-5cea302e3192"
-            },
-            "target": {
-              "cell": "a1d5bbe6-465f-43bb-bd96-7ce687db37aa",
-              "port": "90bd28a9-ad14-4f91-81ad-9569ebc7eace"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "Report schicken",
               "description": "",
               "outOfScope": false,
@@ -1894,19 +1877,19 @@
             "labels": [
               "Report schicken"
             ],
-            "id": "ca715622-5dc8-44c5-b4b2-f0353f59640c",
+            "id": "1010f14b-2d1d-466c-ae49-2fd32b49abbc",
             "source": {
-              "cell": "18014c60-7665-472f-9474-10a666ec5f01",
-              "port": "e9fc968a-0472-4da5-a6b5-7ce6e3f83cd8"
-            },
-            "target": {
               "cell": "b4739237-f19e-4fec-ad0f-63b22b4b545e",
               "port": "d234948e-10ad-4deb-8fe1-c81e27d8a1f6"
             },
+            "target": {
+              "cell": "b8d7e35e-0fa9-4700-8f92-d2adb09abecb",
+              "port": "1f2f8431-d574-4661-95dc-aab1a066e3d6"
+            },
             "vertices": [
               {
-                "x": 560,
-                "y": 310
+                "x": 520,
+                "y": 360
               }
             ]
           },
@@ -1951,13 +1934,21 @@
               "y": 350
             },
             "target": {
-              "cell": "18014c60-7665-472f-9474-10a666ec5f01",
-              "port": "43caac9c-585d-4846-8416-a69de6ec0191"
+              "cell": "a1d5bbe6-465f-43bb-bd96-7ce687db37aa",
+              "port": "90bd28a9-ad14-4f91-81ad-9569ebc7eace"
             },
             "vertices": [
               {
-                "x": 750,
-                "y": 410
+                "x": 780,
+                "y": 490
+              },
+              {
+                "x": 670,
+                "y": 510
+              },
+              {
+                "x": 345,
+                "y": 510
               }
             ]
           },
@@ -1996,30 +1987,87 @@
             "labels": [
               "Report schicken"
             ],
-            "id": "1010f14b-2d1d-466c-ae49-2fd32b49abbc",
+            "id": "ca715622-5dc8-44c5-b4b2-f0353f59640c",
             "source": {
+              "cell": "18014c60-7665-472f-9474-10a666ec5f01",
+              "port": "f05582ef-396f-4227-898b-5cea302e3192"
+            },
+            "target": {
               "cell": "b4739237-f19e-4fec-ad0f-63b22b4b545e",
               "port": "1bb1fee1-bdb0-4e2a-8df3-71cee912de45"
             },
+            "vertices": [
+              {
+                "x": 580,
+                "y": 280
+              },
+              {
+                "x": 560,
+                "y": 280
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "2a. Telefonnummer",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              {
+                "attrs": {
+                  "label": {
+                    "text": "Telefonnummer, OTT"
+                  }
+                },
+                "position": 0.5
+              }
+            ],
+            "id": "3f9c3edd-4fe5-4fc4-9239-2ca13291fc25",
+            "source": {
+              "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c"
+            },
             "target": {
-              "cell": "b8d7e35e-0fa9-4700-8f92-d2adb09abecb",
-              "port": "1f2f8431-d574-4661-95dc-aab1a066e3d6"
+              "cell": "18014c60-7665-472f-9474-10a666ec5f01",
+              "port": "0ece0482-db26-4204-a9e0-6bbb6ae328d4"
             },
             "vertices": [
               {
-                "x": 700,
-                "y": 260
-              },
-              {
-                "x": 700,
-                "y": 290
+                "x": 630,
+                "y": 130
               }
             ]
           },
           {
             "position": {
               "x": 410,
-              "y": -174
+              "y": -180
             },
             "size": {
               "width": 120,
@@ -2140,23 +2188,23 @@
               "threats": [
                 {
                   "id": "94568cf0-49de-42f2-89d7-e8d7f5efeb35",
-                  "title": "SQL injection",
+                  "title": "Sesitive Log-Daten stehlen",
                   "status": "Open",
                   "severity": "TBD",
                   "type": "Information disclosure",
-                  "description": "SQL injection: Datenbank ist anfällig für SQL injections und das Auslesen (only READ) von Daten ist möglich, die ich als Kunde nicht lesen dürfte. Man muss eingeloggt sein, um den Angriff durchzuführen.\nCAPEC-66: SQL Injection: This attack exploits target software that constructs SQL statements based on user input. An attacker crafts input strings so that when the target software constructs SQL statements based on the input, the resulting SQL statement performs actions other than those the application intended. SQL Injection results from failure of the application to appropriately validate input.\nT1631: Process Injection",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "Log-DB speichert viele sensitive Information (Login, OTT, Telefon-Nummer), die nicht verschlüsselt sind, Angreifer kann über einen erfolgreichen Angriff auf die Datenbank diese Informationen stehlen und dauerhaft Zugang zum Service erhalten.\nAngriffsvektor: SQL injection\nCAPEC-66: SQL Injection\nT1505.003: Server Software Component: Web Shell\nD: 10 / R: 9 / E: 9 / A: 10 / DREA: 38",
+                  "mitigation": "Einsatz von Prepared Statements, Sensitive Daten muss encryten werden.\nD: 10 / R: 4 / E: 3 / A: 6 / DREA: 23",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 105,
-                  "score": ""
+                  "score": "23"
                 }
               ],
               "storesInventory": null,
               "threatFrequency": {
                 "tampering": 0,
                 "repudiation": 0,
-                "informationDisclosure": 2,
+                "informationDisclosure": 7,
                 "denialOfService": 0
               }
             }
@@ -2410,11 +2458,11 @@
           },
           {
             "position": {
-              "x": 560,
-              "y": 160
+              "x": 400,
+              "y": 210
             },
             "size": {
-              "width": 140,
+              "width": 110,
               "height": 110
             },
             "attrs": {
@@ -2528,35 +2576,35 @@
               "threats": [
                 {
                   "id": "db2cd34f-9c19-47a2-9cfa-cab55b3b56db",
-                  "title": "Versand über unsichere, nachträglich fälschbare E-Mails",
+                  "title": "Mitarbeiter manipuliert Report-Dateien",
                   "status": "Open",
                   "severity": "TBD",
                   "type": "Repudiation",
-                  "description": "CAPEC-111: Message Injection\nT1114: Email Collection\nMitarbeiten können die Report-Dateien zu falsche E-Mail schicken, der Angreifer kann einfach die Daten (Excel-Tabelle) lesen und modifizieren\n",
+                  "description": "Ein Mitarbeiter stiehlt sensible Informationen (Report-Dateien), verkauft sie oder nutzt sie für private Börsenaktionen. Anschließend manipuliert er die Report-Datei so, dass es aussieht, als hätte jemand anderes den Zugriff oder die Änderung vorgenommen.\nAngriffsvektor: Stored Data Manipulation\nCAPEC-165: File Manipulation\nT1565.001: Data Manipulation: Stored Data Manipulation\nD: 4 / R: 10 / E: 10 / A: 3 / DREA: 27 \n",
                   "mitigation": "Provide remediation for this threat or a reason if status is N/A",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 107,
-                  "score": ""
+                  "score": "27"
                 }
               ],
               "threatFrequency": {
                 "spoofing": 0,
                 "tampering": 0,
-                "repudiation": 4,
+                "repudiation": 6,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
               }
             },
             "children": [
-              "992165f3-451c-4b0f-acdf-54c16b0bd09c"
+              "53f2c552-b8e1-458f-9440-1687b25b73b4"
             ]
           },
           {
             "position": {
-              "x": 650,
-              "y": 320
+              "x": 440,
+              "y": 380
             },
             "size": {
               "width": 120,
