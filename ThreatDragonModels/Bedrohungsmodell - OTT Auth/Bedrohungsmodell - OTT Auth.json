@@ -292,7 +292,7 @@
           {
             "position": {
               "x": 488,
-              "y": -11.999999999999922
+              "y": -6.999999999999922
             },
             "size": {
               "width": 130,
@@ -396,7 +396,7 @@
             "id": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c",
             "data": {
               "name": "2-Faktor-Authe\nntifizierungsdi\nenst",
-              "description": "Für Kryptographie wird Standard-Software eingesetzt",
+              "description": "",
               "type": "tm.Process",
               "isTrustBoundary": false,
               "outOfScope": false,
@@ -404,16 +404,16 @@
               "threats": [
                 {
                   "id": "f1c8ec1f-28f2-4f72-96c7-d8babf417c7e",
-                  "title": "ungeschützte Rechte auf Datenbankzugriff",
+                  "title": "Gast kann Log-DB zugreifen",
                   "status": "Open",
                   "severity": "TBD",
                   "type": "Tampering",
                   "description": "Jeder (inkl. Angreifer) hat Zugriff auf die DB und kann Auth-Daten manipulieren oder löschen. Das kompromittiert die Authentifizierung langfristig.\nAngriffsvektor: Privilege Abuse\nCAPEC-122: Privilege Abuse\nID: T1078: Valid Accounts\nD: 10 / R: 9 / E: 10 / A: 10 / DREA: 39\n",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "mitigation": "Einsatz von Role-Based Access Control: Nur angemeldete Nutzer können die Daten lesen, andere Rechte geht nicht.\nLeast Privilege Principle: nur lesen\nD: 10 / R: 4 / E: 7 / A: 7 / DREA: 28",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 106,
-                  "score": ""
+                  "score": "28"
                 },
                 {
                   "id": "f3246f84-02a4-45ed-bc8e-3dc2c071519d",
@@ -421,25 +421,25 @@
                   "status": "Open",
                   "severity": "High",
                   "type": "Denial of service",
-                  "description": "Der Telco- Service ist kostenpflichtig. Angreifer kann massenhaft Auth-Challenges auslösen, wodurch Routing-Kosten entstehen und legitime OTT-Nachrichten verlangsamt oder blockiert werden.\nAngriffsvektor: Abuse von API-Endpunkten\nCAPEC-125: Flooding\nT1642: Endpoint Denial of Service\nD: 10 / R: 9 / E: 8 / A: 3 / DREA: 30",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "Der Telco- Service ist kostenpflichtig. Angreifer kann massenhaft Auth-Challenges auslösen, wodurch Routing-Kosten entstehen und legitime OTT-Nachrichten verlangsamt oder blockiert werden.\nAngriffsvektor: Abuse von API-Endpunkten\nCAPEC-125: Flooding\nT1642: Endpoint Denial of Service\nD: 10 / R: 9 / E: 8 / A: 5 / DREA: 32",
+                  "mitigation": "Countdown-Timer und Login-Limit: Ein Countdown-Timer wird für jede Auth-Challenge eingeführt. Wenn ein Benutzer oder eine App innerhalb eines bestimmten Zeitraums zu viele Login-Versuche auslöst, wird die App temporär blockiert.\nD: 10 / R: 3 / E: 8 / A: 3 / DREA: 24",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 109,
-                  "score": "30"
+                  "score": "24"
                 },
                 {
                   "id": "8b6b70b7-ebd6-4ca7-aad2-52e0391c7ecd",
-                  "title": "unnötig Rechte auf die Log-DB",
+                  "title": "Authentifizierungssession zu lange",
                   "status": "Open",
                   "severity": "Critical",
                   "type": "Elevation of privilege",
-                  "description": "Alle Benutzer besitzen  Rechte auf die Log-DB. Dadurch können sie sensible Daten einsehen, verändern oder löschen.\nAngriffsvektor: Unzureichende Zugriffskontrolle\nCAPEC-114: Authentication Abuse\nT1078.003: Valid Accounts: Local Accounts\nD: 10 / R: 9 / E: 10 / A: 7 / DREA: 36",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "description": "Angreifer, der nicht mehr als Benutzer von App ist, kann den Service weiter nutzen, weil Authentifizierungssession ein Jahr bleiben.\nAngriffsvektor: Unzureichende Zugriffskontrolle\nCAPEC-114: Authentication Abuse\nT1078.003: Valid Accounts: Local Accounts\nD: 7 / R: 9 / E: 10 / A: 4 / DREA: 30",
+                  "mitigation": "Verkürzung der Session-Laufzeit abhängig von Sensitivität\nSession-Timeouts definieren\nD: 7/ R: 2 / E: 3 / A: 4 / DREA: 16\n",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 110,
-                  "score": "36"
+                  "score": "16"
                 }
               ],
               "hasOpenThreats": true,
@@ -451,11 +451,11 @@
               "handlesGoodsOrServices": null,
               "threatFrequency": {
                 "spoofing": 0,
-                "tampering": 9,
+                "tampering": 11,
                 "repudiation": 0,
                 "informationDisclosure": 0,
-                "denialOfService": 6,
-                "elevationOfPrivilege": 7
+                "denialOfService": 8,
+                "elevationOfPrivilege": 8
               },
               "isWebApplication": null
             }
@@ -566,7 +566,7 @@
             },
             "id": "ebc88767-2bed-409f-b854-efadec206ba8",
             "data": {
-              "name": "Telefonnummer-\nAPI-Gateway",
+              "name": "Tfsdgsdf",
               "description": "",
               "type": "tm.Process",
               "isTrustBoundary": false,
@@ -580,11 +580,11 @@
                   "severity": "TBD",
                   "type": "Spoofing",
                   "description": "Ein Angreifer erlangt Zugriff auf Telefonnummern-API-Gateway in 2-Faktor-Authentifizierungsdienst durch Lesen von unverschlüsselten Konfigurationsdateien auf den Servern, dann kann er Innerhalb des Routing-Services die Daten im Klartext lesen.\nCAPEC-639: Probe System Files\nID: T1552.001: Unsecured Credentials: Credentials In Files\nD: 10 / R: 9 / E: 4 / A: 6 / DREA: 29",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "mitigation": "Konfigurationsdateien werden verschlüsselt speichern, nur Admin kann die Dateninhalt schreiben, alle andere kann nur lesen\nD: 10 / R: 5 / E: 2 / A: 6 / DREA: 23\n",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 104,
-                  "score": "29"
+                  "score": "23"
                 }
               ],
               "hasOpenThreats": true,
@@ -592,7 +592,7 @@
               "handlesGoodsOrServices": null,
               "isWebApplication": null,
               "threatFrequency": {
-                "spoofing": 8,
+                "spoofing": 9,
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
@@ -603,8 +603,8 @@
           },
           {
             "position": {
-              "x": 950,
-              "y": 240
+              "x": 980,
+              "y": 250
             },
             "size": {
               "width": 120,
@@ -863,7 +863,7 @@
               "y": 180
             },
             "size": {
-              "width": 160,
+              "width": 150,
               "height": 150
             },
             "attrs": {
@@ -964,7 +964,7 @@
             "id": "18014c60-7665-472f-9474-10a666ec5f01",
             "data": {
               "name": "Allsecure Mobile Phone\nOTT Service",
-              "description": "",
+              "description": "Für Kryptographie wird Standard-Software eingesetzt",
               "type": "tm.Process",
               "isTrustBoundary": false,
               "outOfScope": false,
@@ -1306,7 +1306,7 @@
                 "y": 280
               },
               {
-                "x": 790,
+                "x": 800,
                 "y": 200
               },
               {
@@ -1341,87 +1341,7 @@
                 "x": 243,
                 "y": -8
               }
-            ],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead",
-                "boundary",
-                "button-remove",
-                "vertices",
-                "source-arrowhead",
-                "target-arrowhead"
-              ],
-              "name": null
-            }
+            ]
           },
           {
             "shape": "trust-broundary-curve",
@@ -1913,65 +1833,6 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              ""
-            ],
-            "id": "22f24a87-b8bb-494f-a937-13984ce17ca1",
-            "source": {
-              "x": 960,
-              "y": 350
-            },
-            "target": {
-              "cell": "a1d5bbe6-465f-43bb-bd96-7ce687db37aa",
-              "port": "90bd28a9-ad14-4f91-81ad-9569ebc7eace"
-            },
-            "vertices": [
-              {
-                "x": 780,
-                "y": 490
-              },
-              {
-                "x": 670,
-                "y": 510
-              },
-              {
-                "x": 345,
-                "y": 510
-              }
-            ]
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
               "name": "Report schicken",
               "description": "",
               "outOfScope": false,
@@ -2027,7 +1888,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "2a. Telefonnummer",
+              "name": "Telefonnummer",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -2040,14 +1901,7 @@
               "threats": []
             },
             "labels": [
-              {
-                "attrs": {
-                  "label": {
-                    "text": "Telefonnummer, OTT"
-                  }
-                },
-                "position": 0.5
-              }
+              "Telefonnummer"
             ],
             "id": "3f9c3edd-4fe5-4fc4-9239-2ca13291fc25",
             "source": {
@@ -2061,6 +1915,107 @@
               {
                 "x": 630,
                 "y": 130
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Telefonnummer,\nOTT",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Telefonnummer,\nOTT"
+            ],
+            "id": "cd8401ea-3483-45cf-9e22-207b1389b747",
+            "source": {
+              "cell": "18014c60-7665-472f-9474-10a666ec5f01",
+              "port": "e9fc968a-0472-4da5-a6b5-7ce6e3f83cd8"
+            },
+            "target": {
+              "cell": "fd7303e8-29d2-4d76-bf7d-87eb619ede69",
+              "port": "dfb64408-e3c5-4293-b6c3-aead6ced1ae0"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "5.OTT",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "5.OTT"
+            ],
+            "id": "aab08463-6a5a-4f67-86c6-6a4cc9ae1bb9",
+            "source": {
+              "cell": "fd7303e8-29d2-4d76-bf7d-87eb619ede69",
+              "port": "344eb372-326e-4dae-a33a-2ea1468ab59c"
+            },
+            "target": {
+              "cell": "a1d5bbe6-465f-43bb-bd96-7ce687db37aa",
+              "port": "90bd28a9-ad14-4f91-81ad-9569ebc7eace"
+            },
+            "vertices": [
+              {
+                "x": 740,
+                "y": 530
+              },
+              {
+                "x": 345,
+                "y": 500
               }
             ]
           },
@@ -2581,17 +2536,17 @@
                   "severity": "TBD",
                   "type": "Repudiation",
                   "description": "Ein Mitarbeiter stiehlt sensible Informationen (Report-Dateien), verkauft sie oder nutzt sie für private Börsenaktionen. Anschließend manipuliert er die Report-Datei so, dass es aussieht, als hätte jemand anderes den Zugriff oder die Änderung vorgenommen.\nAngriffsvektor: Stored Data Manipulation\nCAPEC-165: File Manipulation\nT1565.001: Data Manipulation: Stored Data Manipulation\nD: 4 / R: 10 / E: 10 / A: 3 / DREA: 27 \n",
-                  "mitigation": "Provide remediation for this threat or a reason if status is N/A",
+                  "mitigation": "Einsatz von Kryptotechnologie für Report-Daten und setzt Report-DB als nur einmal schreiben\nDigitale Signaturen\nAudit-Logs mit Write-Once-Read-Many (WORM)\nD: 2 / R: 5 / E: 2 / A:3 / DREA: 12  ",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 107,
-                  "score": "27"
+                  "score": "12"
                 }
               ],
               "threatFrequency": {
                 "spoofing": 0,
                 "tampering": 0,
-                "repudiation": 6,
+                "repudiation": 8,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
