@@ -857,8 +857,8 @@
           },
           {
             "position": {
-              "x": 630,
-              "y": 180
+              "x": 650,
+              "y": 260
             },
             "size": {
               "width": 150,
@@ -1667,54 +1667,6 @@
             ]
           },
           {
-            "shape": "trust-boundary-curve",
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Boundary",
-              "name": "Telefonanbieter",
-              "description": "",
-              "isTrustBoundary": true,
-              "hasOpenThreats": false
-            },
-            "labels": [
-              "Telefonanbieter"
-            ],
-            "id": "81828140-3279-4b40-a03b-db2bcdf4850d",
-            "source": {
-              "x": 1110,
-              "y": 220
-            },
-            "target": {
-              "x": 1110,
-              "y": 220
-            },
-            "vertices": [
-              {
-                "x": 950,
-                "y": 220
-              },
-              {
-                "x": 900,
-                "y": 370
-              },
-              {
-                "x": 990,
-                "y": 430
-              },
-              {
-                "x": 1280,
-                "y": 430
-              },
-              {
-                "x": 1230,
-                "y": 280
-              }
-            ]
-          },
-          {
             "shape": "flow",
             "attrs": {
               "line": {
@@ -1867,6 +1819,54 @@
             ]
           },
           {
+            "shape": "trust-boundary-curve",
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Telefonanbieter",
+              "description": "",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "labels": [
+              "Telefonanbieter"
+            ],
+            "id": "81828140-3279-4b40-a03b-db2bcdf4850d",
+            "source": {
+              "x": 1110,
+              "y": 220
+            },
+            "target": {
+              "x": 1110,
+              "y": 220
+            },
+            "vertices": [
+              {
+                "x": 950,
+                "y": 220
+              },
+              {
+                "x": 900,
+                "y": 370
+              },
+              {
+                "x": 990,
+                "y": 430
+              },
+              {
+                "x": 1280,
+                "y": 430
+              },
+              {
+                "x": 1230,
+                "y": 280
+              }
+            ]
+          },
+          {
             "shape": "flow",
             "attrs": {
               "line": {
@@ -1906,13 +1906,80 @@
               "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c"
             },
             "target": {
-              "cell": "18014c60-7665-472f-9474-10a666ec5f01",
-              "port": "0ece0482-db26-4204-a9e0-6bbb6ae328d4"
+              "cell": "fd7303e8-29d2-4d76-bf7d-87eb619ede69",
+              "port": "dfb64408-e3c5-4293-b6c3-aead6ced1ae0"
             },
             "vertices": [
               {
-                "x": 630,
-                "y": 130
+                "x": 690,
+                "y": 140
+              },
+              {
+                "x": 750,
+                "y": 180
+              },
+              {
+                "x": 790,
+                "y": 210
+              },
+              {
+                "x": 840,
+                "y": 240
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "5.OTT",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "5.OTT"
+            ],
+            "id": "aab08463-6a5a-4f67-86c6-6a4cc9ae1bb9",
+            "source": {
+              "cell": "18014c60-7665-472f-9474-10a666ec5f01",
+              "port": "43caac9c-585d-4846-8416-a69de6ec0191"
+            },
+            "target": {
+              "cell": "a1d5bbe6-465f-43bb-bd96-7ce687db37aa",
+              "port": "90bd28a9-ad14-4f91-81ad-9569ebc7eace"
+            },
+            "vertices": [
+              {
+                "x": 560,
+                "y": 500
+              },
+              {
+                "x": 345,
+                "y": 500
               }
             ]
           },
@@ -1953,69 +2020,14 @@
             ],
             "id": "cd8401ea-3483-45cf-9e22-207b1389b747",
             "source": {
+              "x": 1040,
+              "y": 370
+            },
+            "target": {
               "cell": "18014c60-7665-472f-9474-10a666ec5f01",
               "port": "e9fc968a-0472-4da5-a6b5-7ce6e3f83cd8"
             },
-            "target": {
-              "cell": "fd7303e8-29d2-4d76-bf7d-87eb619ede69",
-              "port": "dfb64408-e3c5-4293-b6c3-aead6ced1ae0"
-            },
             "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "5.OTT",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "5.OTT"
-            ],
-            "id": "aab08463-6a5a-4f67-86c6-6a4cc9ae1bb9",
-            "source": {
-              "cell": "fd7303e8-29d2-4d76-bf7d-87eb619ede69",
-              "port": "344eb372-326e-4dae-a33a-2ea1468ab59c"
-            },
-            "target": {
-              "cell": "a1d5bbe6-465f-43bb-bd96-7ce687db37aa",
-              "port": "90bd28a9-ad14-4f91-81ad-9569ebc7eace"
-            },
-            "vertices": [
-              {
-                "x": 740,
-                "y": 530
-              },
-              {
-                "x": 345,
-                "y": 500
-              }
-            ]
           },
           {
             "position": {
@@ -2411,8 +2423,8 @@
           },
           {
             "position": {
-              "x": 400,
-              "y": 210
+              "x": 415,
+              "y": 200
             },
             "size": {
               "width": 110,
@@ -2552,14 +2564,7 @@
             },
             "children": [
               "53f2c552-b8e1-458f-9440-1687b25b73b4"
-            ],
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
-            }
+            ]
           },
           {
             "position": {
