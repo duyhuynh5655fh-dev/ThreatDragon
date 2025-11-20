@@ -268,7 +268,7 @@
                   "severity": "Medium",
                   "type": "Information disclosure",
                   "description": "Wenn ein Angreifer physischen Zugriff auf ein Gerät erhält (Smartphone, Tablet , ...), kann er auf Daten zugreifen, die nicht ausreichend geschützt sind. Besonders SD-Karten sind schwache Verschlüsselung\nAngriffsvektor: Physischer Gerätezugriff\nCAPEC-507: Physical Theft\nT1533 — Data from Local System\nD: 10 / R: 10 / E: 4 / A: 10/ DREA: 34",
-                  "mitigation": "Einsatz einer dynamischen Kryptomechanik (Crypto-Framework von Allsecure), die sicherstellt, dass Daten nur von autorisierten Apps (Allsecure-Apps) gelesen werden können. Durch dynamische Schlüssel und App-Bindung wird verhindert, dass Angreifer Daten im Klartext auslesen, selbst bei physischem Zugriff.\nTechnischen/organisatorischen Umsetzung: Dynamische Schlüsselgenerierung, SD-Karten-Verschlüsselung\nD: 10 / R: 1 / E: 1 / A: 10 / DREA: 22 \nMASVS-STORAGE-1: The app securely stores sensitive data.",
+                  "mitigation": "Einsatz einer dynamischen Kryptomechanik (Crypto-Framework von Allsecure), die sicherstellt, dass Daten nur von autorisierten Apps (Allsecure-Apps) gelesen werden können. Durch dynamische Schlüssel und App-Bindung wird verhindert, dass Angreifer Daten im Klartext auslesen, selbst bei physischem Zugriff.\nTechnischen/organisatorischen Umsetzung: Dynamische Schlüsselgenerierung, SD-Karten-Verschlüsselung\nD: 10 / R: 1 / E: 1 / A: 10 / DREA: 22 \nMASVS-STORAGE-1: The app securely stores sensitive data.\nASVS: V14.3 Client‑side Data Protection",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 108,
@@ -283,7 +283,7 @@
                 "spoofing": 0,
                 "tampering": 0,
                 "repudiation": 0,
-                "informationDisclosure": 17,
+                "informationDisclosure": 18,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
               }
@@ -422,7 +422,7 @@
                   "severity": "Medium",
                   "type": "Denial of service",
                   "description": "Der Telco- Service ist kostenpflichtig. Angreifer kann massenhaft Auth-Challenges auslösen, wodurch Routing-Kosten entstehen und legitime OTT-Nachrichten verlangsamt oder blockiert werden.\nAngriffsvektor: Abuse von API-Endpunkten\nCAPEC-125: Flooding\nT1642: Endpoint Denial of Service\nD: 10 / R: 9 / E: 8 / A: 5 / DREA: 32",
-                  "mitigation": "Ein Countdown-Timer wird für jede Auth-Challenge eingeführt. Wenn ein Benutzer oder eine App innerhalb eines bestimmten Zeitraums zu viele Login-Versuche auslöst, wird die App temporär blockiert.\nTechnischen/organisatorischen Umsetzung: Countdown-Timer und Login-Limit: \nD: 10 / R: 3 / E: 8 / A: 3 / DREA: 24\nV2.2 – Credential Stuffing & Rate Limiting\n",
+                  "mitigation": "Ein Countdown-Timer wird für jede Auth-Challenge eingeführt. Wenn ein Benutzer oder eine App innerhalb eines bestimmten Zeitraums zu viele Login-Versuche auslöst, wird die App temporär blockiert.\nTechnischen/organisatorischen Umsetzung: Countdown-Timer und Login-Limit: \nD: 10 / R: 3 / E: 8 / A: 3 / DREA: 24\nASVS: V6.4 Authentication Factor Lifecycle and Recovery\n            V6.6 Out‑of‑Band authentication mechanisms\n",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 109,
@@ -435,7 +435,7 @@
                   "severity": "Medium",
                   "type": "Elevation of privilege",
                   "description": "Angreifer, der nicht mehr als Benutzer von App ist, kann den Service weiter nutzen, weil Authentifizierungssession ein Jahr bleiben.\nAngriffsvektor: Unzureichende Zugriffskontrolle\nCAPEC-114: Authentication Abuse\nT1078.003: Valid Accounts: Local Accounts\nD: 7 / R: 9 / E: 10 / A: 4 / DREA: 30",
-                  "mitigation": "Verkürzung der Session-Laufzeit abhängig von Sensitivität, z.B in Bank-App nur 10 Minuten, Booking-App 1 Tag, normal App ein Monat\nTechnischen/organisatorischen Umsetzung: Session-Timeouts definieren\nD: 7/ R: 2 / E: 3 / A: 4 / DREA: 16\nD3-CERO: Certificate Rotation",
+                  "mitigation": "Verkürzung der Session-Laufzeit abhängig von der Sensitivität: z. B. in einer Banking-App nur 10 Minuten, in einer Booking-App ein Tag, in einer normalen App ein Monat. Dadurch hat ein Angreifer nicht genug Zeit, um schädliche Aktivitäten auszuführen.\nTechnischen/organisatorischen Umsetzung: Session-Timeouts definieren\nD: 7/ R: 2 / E: 3 / A: 4 / DREA: 16\nMASVS: D3-CERO: Certificate Rotation\nASVS: V7.3 Session Timeout und V7.4 Session Termination",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 110,
@@ -451,11 +451,11 @@
               "handlesGoodsOrServices": null,
               "threatFrequency": {
                 "spoofing": 0,
-                "tampering": 18,
+                "tampering": 20,
                 "repudiation": 0,
                 "informationDisclosure": 0,
-                "denialOfService": 15,
-                "elevationOfPrivilege": 14
+                "denialOfService": 17,
+                "elevationOfPrivilege": 17
               },
               "isWebApplication": null
             }
@@ -580,7 +580,7 @@
                   "severity": "Medium",
                   "type": "Spoofing",
                   "description": "Ein Angreifer erlangt Zugriff auf Telefonnummern-API-Gateway in 2-Faktor-Authentifizierungsdienst durch Lesen von unverschlüsselten Konfigurationsdateien auf den Servern, dann kann er Innerhalb des Routing-Services die Daten im Klartext lesen.\nCAPEC-639: Probe System Files\nID: T1552.001: Unsecured Credentials: Credentials In Files\nD: 10 / R: 9 / E: 4 / A: 6 / DREA: 29",
-                  "mitigation": "Konfigurationsdateien werden verschlüsselt speichern, nur Admin kann die Dateninhalt lesen und schreiben, alle andere sehen die Datei nicht.\nTechnischen/organisatorischen Umsetzung: Dateiverschlüsselung, Schlüsselmanagement\nD: 10 / R: 5 / E: 2 / A: 6 / DREA: 23\nMASVS-PRIVACY-1: The app minimizes access to sensitive data and resources.\n",
+                  "mitigation": "Konfigurationsdateien werden verschlüsselt speichern, nur Admin kann die Dateninhalt lesen und schreiben, alle andere sehen die Datei nicht.\nTechnischen/organisatorischen Umsetzung: Dateiverschlüsselung, Schlüsselmanagement\nD: 10 / R: 5 / E: 2 / A: 6 / DREA: 23\nMASVS-PRIVACY-1: The app minimizes access to sensitive data and resources.\nASVS: V13.2 Backend Communication Configuration\n            V13.3 Secret Management\n",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 104,
@@ -592,7 +592,7 @@
               "handlesGoodsOrServices": null,
               "isWebApplication": null,
               "threatFrequency": {
-                "spoofing": 15,
+                "spoofing": 16,
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
@@ -2159,7 +2159,7 @@
               "threatFrequency": {
                 "tampering": 0,
                 "repudiation": 0,
-                "informationDisclosure": 13,
+                "informationDisclosure": 14,
                 "denialOfService": 0
               }
             }
@@ -2546,7 +2546,7 @@
               "threatFrequency": {
                 "spoofing": 0,
                 "tampering": 0,
-                "repudiation": 15,
+                "repudiation": 16,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
