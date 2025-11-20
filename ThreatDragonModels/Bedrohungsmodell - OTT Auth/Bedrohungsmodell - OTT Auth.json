@@ -2554,7 +2554,14 @@
             },
             "children": [
               "53f2c552-b8e1-458f-9440-1687b25b73b4"
-            ]
+            ],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
+            }
           },
           {
             "position": {
