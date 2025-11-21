@@ -452,7 +452,7 @@
                 "tampering": 21,
                 "repudiation": 0,
                 "informationDisclosure": 0,
-                "denialOfService": 18,
+                "denialOfService": 19,
                 "elevationOfPrivilege": 19
               },
               "isWebApplication": null
@@ -1709,52 +1709,6 @@
             "labels": [
               "Report schicken"
             ],
-            "id": "ef896a70-c6e9-4f28-b7d3-3fe6f30df473",
-            "source": {
-              "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c",
-              "port": "b487abed-b0ae-45f3-b8c8-230e457fae5f"
-            },
-            "target": {
-              "cell": "b4739237-f19e-4fec-ad0f-63b22b4b545e",
-              "port": "4364ae15-9da2-461a-b1f0-f788add806c9"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "targetMarker": {
-                  "name": "block"
-                },
-                "sourceMarker": {
-                  "name": ""
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 10,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Report schicken",
-              "description": "",
-              "outOfScope": false,
-              "isTrustBoundary": false,
-              "reasonOutOfScope": "",
-              "hasOpenThreats": false,
-              "isBidirectional": false,
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "protocol": "",
-              "threats": []
-            },
-            "labels": [
-              "Report schicken"
-            ],
             "id": "1010f14b-2d1d-466c-ae49-2fd32b49abbc",
             "source": {
               "cell": "b4739237-f19e-4fec-ad0f-63b22b4b545e",
@@ -1791,7 +1745,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Report schicken",
+              "name": "Log-Daten",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -1804,7 +1758,7 @@
               "threats": []
             },
             "labels": [
-              "Report schicken"
+              "Log-Daten"
             ],
             "id": "ca715622-5dc8-44c5-b4b2-f0353f59640c",
             "source": {
@@ -2038,6 +1992,102 @@
             "vertices": []
           },
           {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Report schicken",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Report schicken"
+            ],
+            "id": "d2ec7068-1d3b-4d6e-9f9c-7daf7ddd5e81",
+            "source": {
+              "x": 410,
+              "y": 260
+            },
+            "target": {
+              "cell": "42ba80c8-e3a0-46e9-b8e1-d48f1424b54d",
+              "port": "e84a9f87-a897-44cc-88c8-9c7d17006681"
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": ""
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Log-Daten",
+              "description": "",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": false,
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "protocol": "",
+              "threats": []
+            },
+            "labels": [
+              "Log-Daten"
+            ],
+            "id": "ef896a70-c6e9-4f28-b7d3-3fe6f30df473",
+            "source": {
+              "cell": "94f68ce7-aa88-45a4-ba41-c0b62d6a959c",
+              "port": "b487abed-b0ae-45f3-b8c8-230e457fae5f"
+            },
+            "target": {
+              "cell": "b4739237-f19e-4fec-ad0f-63b22b4b545e",
+              "port": "4364ae15-9da2-461a-b1f0-f788add806c9"
+            },
+            "vertices": [
+              {
+                "x": 530,
+                "y": 170
+              }
+            ]
+          },
+          {
             "position": {
               "x": 410,
               "y": -180
@@ -2175,7 +2225,7 @@
               "threatFrequency": {
                 "tampering": 0,
                 "repudiation": 0,
-                "informationDisclosure": 15,
+                "informationDisclosure": 16,
                 "denialOfService": 0
               }
             }
@@ -2700,6 +2750,123 @@
                 "informationDisclosure": 0,
                 "denialOfService": 0
               }
+            }
+          },
+          {
+            "position": {
+              "x": 280,
+              "y": 310
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "Management"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "b7a4e70c-417a-4ab8-b509-ed0332ea22d0"
+                },
+                {
+                  "group": "right",
+                  "id": "e84a9f87-a897-44cc-88c8-9c7d17006681"
+                },
+                {
+                  "group": "bottom",
+                  "id": "db92189b-e49e-4613-b051-d9979d36c876"
+                },
+                {
+                  "group": "left",
+                  "id": "133513d9-b446-4748-8039-d5c764b5f945"
+                }
+              ]
+            },
+            "id": "42ba80c8-e3a0-46e9-b8e1-d48f1424b54d",
+            "zIndex": 16,
+            "data": {
+              "type": "tm.Actor",
+              "name": "Management",
+              "description": "",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "providesAuthentication": false,
+              "threats": []
             }
           }
         ],
