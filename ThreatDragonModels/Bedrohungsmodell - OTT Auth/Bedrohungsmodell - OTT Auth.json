@@ -264,7 +264,7 @@
                   "title": "SD-Karten sind unsicher",
                   "status": "Mitigated",
                   "severity": "Medium",
-                  "type": "Spoofing",
+                  "type": "Elevation of privilege",
                   "description": "Wenn ein Angreifer physischen Zugriff auf ein Gerät erhält (Smartphone, Tablet , ...), kann er auf Daten zugreifen, die nicht ausreichend geschützt sind. Besonders SD-Karten sind schwache Verschlüsselung\nAngriffsvektor: Physischer Gerätezugriff\nCAPEC-507: Physical Theft\nT1533 — Data from Local System\nD: 10 / R: 10 / E: 4 / A: 10/ DREA: 34",
                   "mitigation": "Einsatz einer dynamischen Kryptomechanik (Crypto-Framework von Allsecure), die sicherstellt, dass Daten nur von autorisierten Apps (Allsecure-Apps) gelesen werden können. Durch dynamische Schlüssel und App-Bindung wird verhindert, dass Angreifer Daten im Klartext auslesen, selbst bei physischem Zugriff.\nTechnischen/organisatorischen Umsetzung: Dynamische Schlüsselgenerierung, SD-Karten-Verschlüsselung\nD: 10 / R: 1 / E: 1 / A: 10 / DREA: 22 \nMASVS-STORAGE-1: The app securely stores sensitive data.\nASVS: V14.3 Client‑side Data Protection",
                   "modelType": "STRIDE",
@@ -278,19 +278,19 @@
               "handlesCardPayment": null,
               "handlesGoodsOrServices": null,
               "threatFrequency": {
-                "spoofing": 1,
+                "spoofing": 2,
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 19,
                 "denialOfService": 0,
-                "elevationOfPrivilege": 0
+                "elevationOfPrivilege": 2
               }
             }
           },
           {
             "position": {
-              "x": 488,
-              "y": -6.999999999999922
+              "x": 510,
+              "y": 0
             },
             "size": {
               "width": 130,
@@ -431,7 +431,7 @@
                   "title": "Authentifizierungssession zu lange",
                   "status": "Mitigated",
                   "severity": "Medium",
-                  "type": "Elevation of privilege",
+                  "type": "Spoofing",
                   "description": "Angreifer, der nicht mehr als Benutzer von App ist, kann den Service weiter nutzen, weil Authentifizierungssession ein Jahr bleiben.\nAngriffsvektor: Unzureichende Zugriffskontrolle\nCAPEC-114: Authentication Abuse\nT1078.003: Valid Accounts: Local Accounts\nD: 7 / R: 9 / E: 10 / A: 4 / DREA: 30",
                   "mitigation": "Verkürzung der Session-Laufzeit abhängig von der Sensitivität: z. B. in einer Banking-App nur 10 Minuten, in einer Booking-App ein Tag, in einer normalen App ein Monat. Dadurch hat ein Angreifer nicht genug Zeit, um schädliche Aktivitäten auszuführen.\nTechnischen/organisatorischen Umsetzung: Session-Timeouts definieren\nD: 7/ R: 2 / E: 3 / A: 4 / DREA: 16\nMASVS: D3-CERO: Certificate Rotation\nASVS: V7.3 Session Timeout und V7.4 Session Termination",
                   "modelType": "STRIDE",
@@ -448,7 +448,7 @@
               "handlesCardPayment": null,
               "handlesGoodsOrServices": null,
               "threatFrequency": {
-                "spoofing": 1,
+                "spoofing": 2,
                 "tampering": 21,
                 "repudiation": 0,
                 "informationDisclosure": 0,
@@ -456,13 +456,6 @@
                 "elevationOfPrivilege": 19
               },
               "isWebApplication": null
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -739,7 +732,15 @@
               "isEncrypted": false,
               "isPublicNetwork": false,
               "handlesCardPayment": null,
-              "handlesGoodsOrServices": null
+              "handlesGoodsOrServices": null,
+              "threatFrequency": {
+                "spoofing": 2,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -1088,8 +1089,8 @@
             },
             "vertices": [
               {
-                "x": 440,
-                "y": -10
+                "x": 470,
+                "y": 0
               }
             ]
           },
@@ -1452,8 +1453,8 @@
             },
             "vertices": [
               {
-                "x": 549.5,
-                "y": -60
+                "x": 579.5,
+                "y": -50
               }
             ]
           },
@@ -1609,8 +1610,8 @@
             },
             "vertices": [
               {
-                "x": 760,
-                "y": -10
+                "x": 790,
+                "y": 0
               }
             ]
           },
@@ -1668,8 +1669,8 @@
             },
             "vertices": [
               {
-                "x": 770,
-                "y": 65
+                "x": 800,
+                "y": 75
               }
             ]
           },
@@ -1918,20 +1919,20 @@
             },
             "vertices": [
               {
-                "x": 690,
-                "y": 140
+                "x": 720,
+                "y": 150
               },
               {
-                "x": 750,
-                "y": 180
+                "x": 780,
+                "y": 190
               },
               {
-                "x": 790,
-                "y": 210
+                "x": 820,
+                "y": 220
               },
               {
-                "x": 840,
-                "y": 240
+                "x": 870,
+                "y": 250
               }
             ]
           },
@@ -2428,7 +2429,7 @@
           },
           {
             "position": {
-              "x": 415,
+              "x": 410,
               "y": 200
             },
             "size": {
