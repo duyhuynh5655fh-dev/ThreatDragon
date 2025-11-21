@@ -147,8 +147,8 @@
                 "text": "Login System -\nWebapp +\nMobile App"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -262,7 +262,7 @@
                 {
                   "id": "53c4cef5-2a2d-430e-8264-002258088f28",
                   "title": "SD-Karten sind unsicher",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Information disclosure",
                   "description": "Wenn ein Angreifer physischen Zugriff auf ein Gerät erhält (Smartphone, Tablet , ...), kann er auf Daten zugreifen, die nicht ausreichend geschützt sind. Besonders SD-Karten sind schwache Verschlüsselung\nAngriffsvektor: Physischer Gerätezugriff\nCAPEC-507: Physical Theft\nT1533 — Data from Local System\nD: 10 / R: 10 / E: 4 / A: 10/ DREA: 34",
@@ -273,7 +273,7 @@
                   "score": "22"
                 }
               ],
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "isWebApplication": null,
               "handlesCardPayment": null,
               "handlesGoodsOrServices": null,
@@ -281,7 +281,7 @@
                 "spoofing": 0,
                 "tampering": 0,
                 "repudiation": 0,
-                "informationDisclosure": 18,
+                "informationDisclosure": 19,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
               }
@@ -301,8 +301,8 @@
                 "text": "2-Faktor-Authe\nntifizierungsdi\nenst"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -403,7 +403,7 @@
                 {
                   "id": "f1c8ec1f-28f2-4f72-96c7-d8babf417c7e",
                   "title": "Gast kann Log-DB zugreifen",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Tampering",
                   "description": "Jeder (inkl. Angreifer) hat Zugriff auf die DB und kann Auth-Daten manipulieren oder löschen. Das kompromittiert die Authentifizierung langfristig.\nAngriffsvektor: Privilege Abuse\nCAPEC-122: Privilege Abuse\nID: T1078: Valid Accounts\nD: 10 / R: 9 / E: 10 / A: 10 / DREA: 39\n",
@@ -416,7 +416,7 @@
                 {
                   "id": "f3246f84-02a4-45ed-bc8e-3dc2c071519d",
                   "title": "Überlastung des Telco-Systems",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Denial of service",
                   "description": "Der Telco- Service ist kostenpflichtig. Angreifer kann massenhaft Auth-Challenges auslösen, wodurch Routing-Kosten entstehen und legitime OTT-Nachrichten verlangsamt oder blockiert werden.\nAngriffsvektor: Abuse von API-Endpunkten\nCAPEC-125: Flooding\nT1642: Endpoint Denial of Service\nD: 10 / R: 9 / E: 8 / A: 5 / DREA: 32",
@@ -429,7 +429,7 @@
                 {
                   "id": "8b6b70b7-ebd6-4ca7-aad2-52e0391c7ecd",
                   "title": "Authentifizierungssession zu lange",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Elevation of privilege",
                   "description": "Angreifer, der nicht mehr als Benutzer von App ist, kann den Service weiter nutzen, weil Authentifizierungssession ein Jahr bleiben.\nAngriffsvektor: Unzureichende Zugriffskontrolle\nCAPEC-114: Authentication Abuse\nT1078.003: Valid Accounts: Local Accounts\nD: 7 / R: 9 / E: 10 / A: 4 / DREA: 30",
@@ -440,7 +440,7 @@
                   "score": "16"
                 }
               ],
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "isBidirectional": false,
               "protocol": "",
               "isEncrypted": false,
@@ -449,11 +449,11 @@
               "handlesGoodsOrServices": null,
               "threatFrequency": {
                 "spoofing": 0,
-                "tampering": 20,
+                "tampering": 21,
                 "repudiation": 0,
                 "informationDisclosure": 0,
-                "denialOfService": 17,
-                "elevationOfPrivilege": 17
+                "denialOfService": 18,
+                "elevationOfPrivilege": 18
               },
               "isWebApplication": null
             }
@@ -472,8 +472,8 @@
                 "text": "Telefonnummer-\nAPI-Gateway"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -574,7 +574,7 @@
                 {
                   "id": "d0e7562e-a51b-4f66-852e-b0ebe16079e5",
                   "title": "Zugriff auf unverschlüsselte Konfigurationsdatei ist zu einfach",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Spoofing",
                   "description": "Ein Angreifer erlangt Zugriff auf Telefonnummern-API-Gateway in 2-Faktor-Authentifizierungsdienst durch Lesen von unverschlüsselten Konfigurationsdateien auf den Servern, dann kann er Innerhalb des Routing-Services die Daten im Klartext lesen.\nCAPEC-639: Probe System Files\nID: T1552.001: Unsecured Credentials: Credentials In Files\nD: 10 / R: 9 / E: 4 / A: 6 / DREA: 29",
@@ -585,12 +585,12 @@
                   "score": "23"
                 }
               ],
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "handlesCardPayment": null,
               "handlesGoodsOrServices": null,
               "isWebApplication": null,
               "threatFrequency": {
-                "spoofing": 17,
+                "spoofing": 18,
                 "tampering": 0,
                 "repudiation": 0,
                 "informationDisclosure": 0,
@@ -1886,7 +1886,7 @@
             "connector": "smooth",
             "data": {
               "type": "tm.Flow",
-              "name": "Telefonnummer",
+              "name": "Telefonnummer, OTT",
               "description": "",
               "outOfScope": false,
               "isTrustBoundary": false,
@@ -1899,7 +1899,7 @@
               "threats": []
             },
             "labels": [
-              "Telefonnummer"
+              "Telefonnummer, OTT"
             ],
             "id": "3f9c3edd-4fe5-4fc4-9239-2ca13291fc25",
             "source": {
@@ -2043,13 +2043,11 @@
                 "text": "Log-DB"
               },
               "topLine": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -2149,12 +2147,12 @@
               "storesCredentials": false,
               "isEncrypted": true,
               "isSigned": true,
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "threats": [
                 {
                   "id": "94568cf0-49de-42f2-89d7-e8d7f5efeb35",
                   "title": "Sesitive Log-Daten stehlen",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Information disclosure",
                   "description": "Log-DB speichert viele sensitive Information (Login, OTT, Telefon-Nummer), die nicht verschlüsselt sind, Angreifer kann über einen erfolgreichen Angriff auf die Datenbank diese Informationen stehlen und dauerhaft Zugang zum Service erhalten.\nAngriffsvektor: SQL injection\nCAPEC-66: SQL Injection\nT1505.003: Server Software Component: Web Shell\nD: 10 / R: 9 / E: 9 / A: 10 / DREA: 38",
@@ -2169,7 +2167,7 @@
               "threatFrequency": {
                 "tampering": 0,
                 "repudiation": 0,
-                "informationDisclosure": 14,
+                "informationDisclosure": 15,
                 "denialOfService": 0
               }
             }
@@ -2435,8 +2433,8 @@
                 "text": "SIEM-System"
               },
               "body": {
-                "stroke": "red",
-                "strokeWidth": 2.5,
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
                 "strokeDasharray": null
               }
             },
@@ -2533,7 +2531,7 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": true,
+              "hasOpenThreats": false,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
@@ -2542,11 +2540,11 @@
                 {
                   "id": "db2cd34f-9c19-47a2-9cfa-cab55b3b56db",
                   "title": "Mitarbeiter manipuliert Report-Dateien",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Low",
                   "type": "Repudiation",
                   "description": "Ein Mitarbeiter stiehlt sensible Informationen (Report-Dateien), verkauft sie oder nutzt sie für private Börsenaktionen. Anschließend manipuliert er die Report-Datei so, dass es aussieht, als hätte jemand anderes den Zugriff oder die Änderung vorgenommen.\nAngriffsvektor: Stored Data Manipulation\nCAPEC-165: File Manipulation\nT1565.001: Data Manipulation: Stored Data Manipulation\nD: 4 / R: 10 / E: 10 / A: 3 / DREA: 27 \n",
-                  "mitigation": "Einsatz von Kryptotechnologie für Report-Daten und setzt Report-DB als nur einmal schreiben. Report-Dateien werden nicht mehr per E-Mail schicken, sondern Admin zugreift dirket durch API Mitarbeiter kann nicht mehr Report-Datei lesen und manipulieren\nTechnischen/organisatorischen Umsetzung: Digitale Signaturen, Write-Once-Mechanismus, Zugriffsrechte und Rollenmodell, API.\nD: 2 / R: 5 / E: 2 / A:3 / DREA: 12  \nMASVS-CRYPTO: Cryptography\nMitre D3FEND-Matrix: Message Encryption\n",
+                  "mitigation": "Einsatz von Kryptotechnologie für Report-Daten und setzt Report-DB als nur einmal schreiben. Report-Dateien werden nicht mehr per E-Mail schicken, sondern Admin zugreift dirket durch API Mitarbeiter kann nicht mehr Report-Datei lesen und manipulieren\nTechnischen/organisatorischen Umsetzung: Digitale Signaturen, Write-Once-Mechanismus, Zugriffsrechte und Rollenmodell, API.\nD: 2 / R: 5 / E: 2 / A:3 / DREA: 12  \nMASVS-CRYPTO: Cryptography\nMitre D3FEND-Matrix: Message Encryption, D3-APA - Access Policy Administration\n",
                   "modelType": "STRIDE",
                   "new": false,
                   "number": 107,
@@ -2556,7 +2554,7 @@
               "threatFrequency": {
                 "spoofing": 0,
                 "tampering": 0,
-                "repudiation": 16,
+                "repudiation": 18,
                 "informationDisclosure": 0,
                 "denialOfService": 0,
                 "elevationOfPrivilege": 0
